@@ -1,23 +1,10 @@
 import { useEffect, useState } from 'react';
-import {
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Image, ScrollView, StyleSheet,  Text, TouchableOpacity, View,} from 'react-native';
 
 import Loading from '../components/Loading';
 import ErrorMessage from '../components/ErrorMessage';
 import { getMovieDetails } from '../services/api';
-import {
-  formatDate,
-  formatMoney,
-  formatRating,
-  formatRuntime,
-  getImageUrl,
-} from '../utils/format';
+import { formatDate,  formatMoney,  formatRating,  formatRuntime,  getImageUrl,} from '../utils/format';
 
 export default function DetailsScreen({ route, navigation }) {
   const { movieId } = route.params;

@@ -1,5 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
+// Tela inicial do app - mostra apresentação e botão para explorar filmes
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>

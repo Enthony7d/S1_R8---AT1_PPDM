@@ -1,14 +1,17 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { formatDate, formatRating, getImageUrl } from '../utils/format';
 
+// Card que exibe as informações resumidas de um filme
 export default function MovieCard({ movie, onPress }) {
   const posterUrl = getImageUrl(movie.poster_path);
 
   return (
+    // TouchableOpacity torna o card clicável
     <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.8}>
       {posterUrl ? (
         <Image source={{ uri: posterUrl }} style={styles.poster} />
       ) : (
+        // Placeholder quando não tem imagem
         <View style={[styles.poster, styles.noPoster]}>
           <Text style={styles.noPosterText}>Sem imagem</Text>
         </View>

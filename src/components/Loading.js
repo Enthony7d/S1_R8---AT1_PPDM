@@ -1,8 +1,10 @@
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 
+// Componente que exibe um indicador de carregamento com mensagem
 export default function Loading({ message = 'Carregando...' }) {
   return (
     <View style={styles.container}>
+      {/* Spinner animado */}
       <ActivityIndicator size="large" color="#f59e0b" />
       <Text style={styles.text}>{message}</Text>
     </View>

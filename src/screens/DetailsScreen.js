@@ -6,6 +6,7 @@ import ErrorMessage from '../components/ErrorMessage';
 import { getMovieDetails } from '../services/api';
 import { formatDate,  formatMoney,  formatRating,  formatRuntime,  getImageUrl,} from '../utils/format';
 
+// Tela de detalhes - exibe todas as informações completas de um filme
 export default function DetailsScreen({ route, navigation }) {
   const { movieId } = route.params;
 
@@ -13,6 +14,7 @@ export default function DetailsScreen({ route, navigation }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Busca os detalhes do filme na API
   async function loadDetails() {
     try {
       setLoading(true);
@@ -28,6 +30,7 @@ export default function DetailsScreen({ route, navigation }) {
     }
   }
 
+  // Carrega os detalhes quando o componente monta ou quando o ID muda
   useEffect(() => {
     loadDetails();
   }, [movieId]);
@@ -78,6 +81,7 @@ export default function DetailsScreen({ route, navigation }) {
   );
 }
 
+// Componente auxiliar para exibir cada linha de informação (label + valor)
 function InfoRow({ label, value }) {
   return (
     <View style={styles.row}>
